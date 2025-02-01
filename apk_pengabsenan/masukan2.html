@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+           
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6a0572,#21867a);
+        
+    }
+        body {
+            display: flex;
+            height: 100vh;
+            
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #1c201ecc;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            color: white;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 10px;
+            background-color: #515a53b4;
+            border-radius: 5px;
+        }
+        .sidebar a:hover {
+            background-color: #2022205e;
+        }
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #4a6652;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="#">Menu Absen</a>
+        <a href="#">Data Absen</a>
+        <a href="#">Data Rekap</a>
+        <a href="#">Pengaturan</a>
+        <a href="#">Keluar</a>
+    </div>
+    <div class="container">
+        <div class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Beri kami Masukan Dong...</h2>
+            <textarea placeholder="Tulis Disini..."></textarea>
+            <button class="submit">✔</button>
+        </div>
+    </div>
+
+    <script>
+        function closeModal() {
+            document.querySelector('.modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
