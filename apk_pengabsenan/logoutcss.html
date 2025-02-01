@@ -1,0 +1,23 @@
+#include <iostream>
+    #include <cstdlib>
+    using namespace std;
+    
+    void exitApplication() {
+        cout << "Keluar dari aplikasi...\n";
+        exit(0);
+    }
+    
+    int main() {
+        char pilihan;
+        cout << "Apakah Anda yakin ingin keluar? (y/n): ";
+        cin >> pilihan;
+    
+        if (pilihan == 'y' || pilihan == 'Y') {
+            exitApplication();
+        } else {
+            cout << "Batal keluar.\n";
+        }
+    
+        return 0;
+    }
+    
