@@ -1,0 +1,48 @@
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignOutAlt, faTimes, faHome, faClipboardList, faCog } from "@fortawesome/free-solid-svg-icons";
+
+const LogoutConfirmation = () => {
+  return (
+    <div className="flex h-screen w-screen bg-gradient-to-br from-purple-400 to-green-500">
+      {/* Sidebar */}
+      <div className="w-1/5 bg-gray-900 text-white p-6 flex flex-col space-y-6 shadow-lg text-left">
+        <h2 className="text-xl font-bold">Menu Absen</h2>
+        <button className="hover:text-gray-300 flex items-center gap-2">
+          <FontAwesomeIcon icon={faHome} /> Data Absen
+        </button>
+        <button className="hover:text-gray-300 flex items-center gap-2">
+          <FontAwesomeIcon icon={faClipboardList} /> Data Rekap
+        </button>
+        <button className="hover:text-gray-300 flex items-center gap-2">
+          <FontAwesomeIcon icon={faCog} /> Pengaturan
+        </button>
+        <button className="bg-gray-700 hover:bg-gray-600 p-3 rounded-lg font-semibold flex items-center gap-2">
+          <FontAwesomeIcon icon={faSignOutAlt} /> Keluar
+        </button>
+      </div>
+
+      {/* Main Content */}
+      <div className="flex flex-1 items-center justify-center">
+        <div className="bg-white text-black p-12 rounded-2xl shadow-2xl text-center max-w-md">
+          <h1 className="text-xl font-bold mb-4">Apakah Anda yakin ingin keluar?</h1>
+          <div className="mt-6 flex justify-center space-x-6">
+            <button className="bg-gray-200 hover:bg-gray-300 px-6 py-3 rounded-lg shadow-md font-medium flex items-center gap-2">
+              <FontAwesomeIcon icon={faTimes} /> Batal
+            </button>
+            <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg shadow-md font-medium flex items-center gap-2">
+              <FontAwesomeIcon icon={faSignOutAlt} /> Keluar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="absolute bottom-0 w-full text-center bg-gray-800 text-white p-3 shadow-inner">
+        <p>@ 2025 Copyright | Kelompok 1</p>
+      </div>
+    </div>
+  );
+};
+
+export default LogoutConfirmation;
