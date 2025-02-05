@@ -1,0 +1,27 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+body { background: #f8f9fa; text-align: center; }
+
+/* Navbar */
+.navbar { background: #333; color: white; padding: 15px; position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; }
+.navbar ul { list-style: none; display: flex; }
+.navbar ul li { margin: 0 15px; }
+.navbar a { color: white; text-decoration: none; }
+.navbar a:hover { color: #ddd; }
+
+/* Hero Section */
+.hero { height: 100vh; background: linear-gradient(to right, #6a11cb, #2575fc); color: white; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+.hero h1 { font-size: 50px; margin-bottom: 20px; }
+.cta-btn { background: white; color: #2575fc; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+
+/* Features */
+.features { padding: 50px 20px; background: white; }
+.feature-container { display: flex; justify-content: center; gap: 20px; }
+.feature-box { padding: 20px; background: #2575fc; color: white; border-radius: 10px; width: 30%; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+
+/* Contact */
+.contact form { max-width: 500px; margin: 0 auto; }
+.contact input, .contact textarea { width: 100%; padding: 10px; margin: 10px 0; }
+.contact button { background: #2575fc; color: white; padding: 10px 20px; border: none; border-radius: 5px; }
+
+/* Footer */
+footer { background: #333; color: white; padding: 15px; margin-top: 30px; }
