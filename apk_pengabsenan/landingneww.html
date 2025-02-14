@@ -26,17 +26,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        header .image-text {
-            display: flex;
-            align-items: right;
-            gap: 20px; /* Jarak antara gambar dan teks */
-            padding: 100%;
-        }
-
-        .image-text img {
-            width: 200px;
-            border-radius: 10px;
-        }
+        
            
             
         
@@ -60,10 +50,10 @@
             font-size: 18px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-    }
+        }
 
         .custom-button:hover {
-    background-color: #cc5200;
+            background-color: #cc5200;
         }
 
             
@@ -71,9 +61,92 @@
         .cta-button:hover {
             background-color: #cc5200;
         }
+        .hero {
+            display: flex; /* Menjadikan elemen dalam hero berjajar */
+            align-items: center; /* Menyusun elemen secara vertikal */
+            justify-content: space-between; /* Memberi jarak antara teks dan gambar */
+            padding: 50px;
+            height: 100vh;
+            background: linear-gradient(135deg, #7B1FA2, #00838F); /* Warna background */
+            color: white;
+            text-align: left;
+        }
+
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 25px;
+        }
+
+        .hero-image {
+            width: 800px; /* Atur ukuran gambar */
+            height: auto;
+        }
+        .image-container {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Membuat efek gambar masuk ke dalam lingkaran */
+        }
+
+/* Lingkaran di belakang gambar */
+        .circle-bg {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+/* Gambar masuk ke dalam lingkaran */
+        .hero-image {
+            position: relative;
+            width: 650px; /* Bisa lebih besar dari lingkaran untuk efek masuk */
+            height: auto;
+            background: rgba(255, 255, 255, 0.2); /* Warna putih transparan */
+            z-index: 2; /* Pastikan gambar di atas lingkaran */
+            clip-path: circle(50% at center); /* Efek gambar masuk ke dalam lingkaran */
+        }
+        .hero {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            height: 100vh;
+            background: linear-gradient(135deg, #7B1FA2, #00838F);
+            color: white;
+            text-align: center;
+        }
+
+/* Agar gambar melayang di atas teks */
+        .image-container {
+            position: absolute;
+            top: 20%; /* Sesuaikan posisi vertikal */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2; /* Pastikan gambar berada di atas teks */
+        }
+
+        
+        
+
+
 
         /* Hero Section */
-        .hero {
+        .halo {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -81,36 +154,36 @@
             text-align: center;
         }
 
-        .hero img {
+        .haloo img {
             max-width: 500px;
             border-radius: 10px;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             margin-left: 40px;
         }
 
-        .hero-text {
+        .halo-text {
             max-width: 600px;
         }
 
-        .hero h2 {
+        .halo h2 {
             font-size: 36px;
             margin-bottom: 20px;
             color: #333;
         }
 
-        .hero p {
+        .halo p {
             font-size: 18px;
             color: #666;
             margin-bottom: 30px;
         }
-        .hero {
+        .halo {
             display: flex;
             align-items: center;
             gap: 20px;
         }
 
-        .hero img {
-            width: 300px;
+        .halo img {
+            width: 500px;
             border-radius: 10px;
         }
 
@@ -311,20 +384,28 @@
 </head>
 <body>
 
-<header>
-    <h1>Selamat datang di APPASI</h1>
-    <p>Kelola Data Absensi Sekolah Secara Aman Dan Evisien Dengan Aplikasi Absensi.</p>
-    <img src="images/siswa.png" alt="gambarsiswa">
+    <section class="hero">
+    </div>
+    <div class="image-container">
+        <div class="circle-bg"></div>
+        <img src="images/smk.png" alt="logo smk" class="hero-image">
+    </div>
+        <div class="hero-text">
+            <h1>Selamat datang di APPASI</h1>
+            <p>Kelola Data Absensi Sekolah Secara Aman Dan Efisien Dengan Aplikasi Absensi.</p>
+        </div>
+        <img src="images/siswa.png" alt="Ilustrasi Siswa" class="hero-image">
+       
+    </section>
+    
 
-</header>
-
-<section class="hero">
-    <div class="hero-text">
+<section class="halo">
+    <div class="halo-text">
         <h2>Inovasi yang Membantu Proses Absensi Anda</h2>
         <p>dapat menyimpan database absensi siswa secara aman dan evisien, komprehensif untuk seluruh siswa,serta mudah dalam perekapan data kehadiran selama tahun ajaran berjalan.</p>
         <a href="#cta" class="cta-button">Sign in</a>
     </div>
-    <img src="https://via.placeholder.com/500" alt="Produk Kami">
+    <img src="images/absen.png" alt="absen">
 </section>
 
 <section class="features">
