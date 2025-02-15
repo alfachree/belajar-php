@@ -1,21 +1,38 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nama = htmlspecialchars($_POST["name"]);
-    $email = htmlspecialchars($_POST["email"]);
-    $pesan = htmlspecialchars($_POST["message"]);
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-    $to = "mohammad.fadhil2371@smk.belajar.id";
-    $subject = "Pesan dari $nama";
-    $headers = "From: $email\r\nReply-To: $email\r\nContent-Type: text/plain; charset=UTF-8\r\n";
+require 'vendor/autoload.php';
 
-    $body = "Nama: $nama\nEmail: $email\n\nPesan:\n$pesan";
+$mail = new PHPMailer(true);
 
-    if (mail($to, $subject, $body, $headers)) {
-        echo "Pesan berhasil dikirim.";
-    } else {
-        echo "Gagal mengirim pesan.";
+try {
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'your-email@gmail.com';
+    $mail->Password = 'app-password-16digit';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+
+    if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+        die("Akses langsung tidak diperbolehkan.");
     }
-} else {
-    echo "Akses tidak diizinkan!";
+
+    $name = !empty($_POST['name']) ? $_POST['name'] : 'Tidak ada nama';
+    $email = !empty($_POST['email']) ? $_POST['email'] : 'Tidak ada email';
+    $message = !empty($_POST['message']) ? $_POST['message'] : 'Tidak ada pesan';
+
+    $mail->setFrom('your-email@gmail.com', 'Nama Anda');
+    $mail->addAddress('mohammad.fadhil2371@smk.belajar.id');
+
+    $mail->isHTML(true);
+    $mail->Subject = 'Pesan dari Form Kontak';
+    $mail->Body = "Nama: $name<br>Email: $email<br>Pesan: $message";
+
+    $mail->send();
+    echo 'Pesan berhasil dikirim!';
+} catch (Exception $e) {
+    echo "Gagal mengirim email. Error: " . htmlspecialchars($mail->ErrorInfo);
 }
 ?>
