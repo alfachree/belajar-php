@@ -100,15 +100,7 @@
             overflow: hidden; /* Membuat efek gambar masuk ke dalam lingkaran */
         }
 
-/* Lingkaran di belakang gambar */
-        .circle-bg {
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            z-index: 1;
-        }
+
 
 /* Gambar masuk ke dalam lingkaran */
         .hero-image {
@@ -388,7 +380,6 @@
     </div>
     <div class="image-container">
         <div class="circle-bg"></div>
-        <img src="images/smk.png" alt="logo smk" class="hero-image">
     </div>
         <div class="hero-text">
             <h1>Selamat datang di APPASI</h1>
@@ -469,12 +460,13 @@
 
 <section class="contact-us">
     <h2>Hubungi Kami</h2>
-    <form action="#" class="contact-form">
-        <input type="text" placeholder="Nama Anda" required>
-        <input type="email" placeholder="Email Anda" required>
-        <textarea placeholder="Pesan Anda" required></textarea>
-        <button type="submit">Kirim Pesan</button>
-    </form>
+<form action="send_email.php" method="post" class="contact-form">
+    <input type="text" name="name" placeholder="Nama Anda" required>
+    <input type="email" name="email" placeholder="Email Anda" required>
+    <textarea name="message" placeholder="Pesan Anda" required></textarea>
+    <button type="submit">Kirim Pesan</button>
+</form>  
+
 </section>
 
 <footer>
